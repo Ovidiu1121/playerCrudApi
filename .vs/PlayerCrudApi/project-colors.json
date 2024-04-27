@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "33392c6a-86ca-47ff-a799-c69d83298d00": {
+      "ProjectGuid": "33392c6a-86ca-47ff-a799-c69d83298d00",
+      "DisplayName": "PlayerCrudApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

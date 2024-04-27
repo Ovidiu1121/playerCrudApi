@@ -1,0 +1,10 @@
+﻿insert into player (id, name, number, value) values (1, 'Kelsey', 85, 178500);
+insert into player (id, name, number, value) values (2, 'Nevin', 80, 435295);
+insert into player (id, name, number, value) values (3, 'Sharlene', 28, 777542);
+insert into player (id, name, number, value) values (4, 'Alayne', 47, 938052);
+insert into player (id, name, number, value) values (5, 'Erinn', 86, 671144);
+insert into player (id, name, number, value) values (6, 'Evvie', 16, 481917);
+insert into player (id, name, number, value) values (7, 'Gilda', 45, 630879);
+insert into player (id, name, number, value) values (8, 'Pippy', 55, 995370);
+insert into player (id, name, number, value) values (9, 'Rhodia', 2, 723899);
+insert into player (id, name, number, value) values (10, 'Andonis', 58, 419645);

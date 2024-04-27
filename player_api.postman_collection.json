@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "f60feeda-b470-42b8-bb79-b07946ec53cd",
+		"name": "player_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33660681"
+	},
+	"item": [
+		{
+			"name": "GetAllPlayers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7035/api/v1/Player/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7035",
+					"path": [
+						"api",
+						"v1",
+						"Player",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByNameRoute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7035/api/v1/Player/Sharlene",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7035",
+					"path": [
+						"api",
+						"v1",
+						"Player",
+						"Sharlene"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTCreatePlayer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Mihai\",\r\n  \"number\": 43,\r\n  \"value\": 235643\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7035/api/v1/Player/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7035",
+					"path": [
+						"api",
+						"v1",
+						"Player",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTUpdatePlayer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"value\": 30000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7035/api/v1/Player/update/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7035",
+					"path": [
+						"api",
+						"v1",
+						"Player",
+						"update",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePlayer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7035/api/v1/Player/delete/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7035",
+					"path": [
+						"api",
+						"v1",
+						"Player",
+						"delete",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
