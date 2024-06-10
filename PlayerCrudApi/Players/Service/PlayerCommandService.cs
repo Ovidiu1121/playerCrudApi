@@ -18,11 +18,6 @@ namespace PlayerCrudApi.Players.Service
 
         public async Task<Player> CreatePlayer(CreatePlayerRequest request)
         {
-            if (request.Value<0)
-            {
-                throw new InvalidValue(Constants.INVALID_VALUE);
-            }
-
             Player player = await _repository.GetByNameAsync(request.Name);
 
             if (player!=null)
@@ -49,10 +44,6 @@ namespace PlayerCrudApi.Players.Service
 
         public async Task<Player> UpdatePlayer(int id, UpdatePlayerRequest request)
         {
-            if (request.Value<0)
-            {
-                throw new InvalidValue(Constants.INVALID_VALUE);
-            }
 
             Player player = await _repository.GetByIdAsync(id);
 

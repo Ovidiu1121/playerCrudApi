@@ -5,7 +5,12 @@
       "ProjectGuid": "33392c6a-86ca-47ff-a799-c69d83298d00",
       "DisplayName": "PlayerCrudApi",
       "ColorIndex": 0
+    },
+    "3dddf9d8-6da6-4377-a820-1ceba82b5b81": {
+      "ProjectGuid": "3dddf9d8-6da6-4377-a820-1ceba82b5b81",
+      "DisplayName": "tests",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
