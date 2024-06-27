@@ -18,7 +18,7 @@ namespace PlayerCrudApi.Players.Repository
             _mapper = mapper;
         }
 
-        public async Task<Player> CreatePlayer(CreatePlayerRequest request)
+        public async Task<PlayerDto> CreatePlayer(CreatePlayerRequest request)
         {
             var player = _mapper.Map<Player>(request);
 
@@ -26,10 +26,10 @@ namespace PlayerCrudApi.Players.Repository
 
             await _context.SaveChangesAsync();
 
-            return player;
+            return _mapper.Map<PlayerDto>(player);
         }
 
-        public async Task<Player> DeletePlayerById(int id)
+        public async Task<PlayerDto> DeletePlayerById(int id)
         {
             var player = await _context.Players.FindAsync(id);
 
@@ -37,25 +37,36 @@ namespace PlayerCrudApi.Players.Repository
 
             await _context.SaveChangesAsync();
 
-            return player;
+            return _mapper.Map<PlayerDto>(player);
         }
 
-        public async Task<IEnumerable<Player>> GetAllAsync()
+        public async Task<ListPlayerDto> GetAllAsync()
         {
-            return await _context.Players.ToListAsync();
+            List<Player> result = await _context.Players.ToListAsync();
+            
+            ListPlayerDto listPlayerDto = new ListPlayerDto()
+            {
+                playerList = _mapper.Map<List<PlayerDto>>(result)
+            };
+
+            return listPlayerDto;
         }
 
-        public async Task<Player> GetByIdAsync(int id)
+        public async Task<PlayerDto> GetByIdAsync(int id)
         {
-            return await _context.Players.FirstOrDefaultAsync(obj => obj.Id.Equals(id));
+            var player = await _context.Players.Where(p => p.Id == id).FirstOrDefaultAsync();
+            
+            return _mapper.Map<PlayerDto>(player);
         }
 
-        public async Task<Player> GetByNameAsync(string name)
+        public async Task<PlayerDto> GetByNameAsync(string name)
         {
-            return await _context.Players.FirstOrDefaultAsync(obj => obj.Name.Equals(name));
+            var player = await _context.Players.Where(p => p.Name.Equals(name)).FirstOrDefaultAsync();
+            
+            return _mapper.Map<PlayerDto>(player);
         }
 
-        public async Task<Player> UpdatePlayer(int id, UpdatePlayerRequest request)
+        public async Task<PlayerDto> UpdatePlayer(int id, UpdatePlayerRequest request)
         {
             var player = await _context.Players.FindAsync(id);
 
@@ -67,7 +78,7 @@ namespace PlayerCrudApi.Players.Repository
 
             await _context.SaveChangesAsync();
 
-            return player;
+            return _mapper.Map<PlayerDto>(player);
         }
     }
 }

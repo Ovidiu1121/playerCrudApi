@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PlayerCrudApi.Dto;
 using tests.Helpers;
 using Xunit;
 
@@ -30,7 +31,7 @@ namespace tests.UnitTests
         public async Task GetAll_ItemsDoNotExist()
         {
 
-            _mock.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<Player>());
+            _mock.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new ListPlayerDto());
 
             var exception = await Assert.ThrowsAsync<ItemDoesNotExist>(() => _service.GetAllPlayers());
 
@@ -49,7 +50,7 @@ namespace tests.UnitTests
             var result = await _service.GetAllPlayers();
 
             Assert.NotNull(result);
-            Assert.Contains(players[1], result);
+            Assert.Contains(players.playerList[1], result.playerList);
 
         }
 
@@ -57,7 +58,7 @@ namespace tests.UnitTests
         public async Task GetByName_ItemDoesNotExist()
         {
 
-            _mock.Setup(repo => repo.GetByNameAsync("")).ReturnsAsync((Player)null);
+            _mock.Setup(repo => repo.GetByNameAsync("")).ReturnsAsync((PlayerDto)null);
 
             var exception = await Assert.ThrowsAsync<ItemDoesNotExist>(() => _service.GetByName(""));
 
@@ -86,7 +87,7 @@ namespace tests.UnitTests
         public async Task GetById_ItemDoesNotExist()
         {
 
-            _mock.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((Player)null);
+            _mock.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((PlayerDto)null);
 
             var exception = await Assert.ThrowsAsync<ItemDoesNotExist>(() => _service.GetById(1));
 

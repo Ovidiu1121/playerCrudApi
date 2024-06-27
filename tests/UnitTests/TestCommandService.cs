@@ -85,7 +85,7 @@ namespace tests.UnitTests
 
             var player = TestPlayerFactory.CreatePlayer(2);
 
-            _mock.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((Player)null);
+            _mock.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((PlayerDto)null);
 
             var idException = await Assert.ThrowsAsync<ItemDoesNotExist>(() => _service.UpdatePlayer(1, update));
 
@@ -123,7 +123,7 @@ namespace tests.UnitTests
         public async Task Delete_ItemDoesNotExist()
         {
 
-            _mock.Setup(repo => repo.DeletePlayerById(It.IsAny<int>())).ReturnsAsync((Player)null);
+            _mock.Setup(repo => repo.DeletePlayerById(It.IsAny<int>())).ReturnsAsync((PlayerDto)null);
 
             var exception = await Assert.ThrowsAsync<ItemDoesNotExist>(() => _service.DeletePlayer(5));
 

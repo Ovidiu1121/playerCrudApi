@@ -1,0 +1,18 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=91a21ac9_002Dfa00_002D4caa_002Dbe54_002D8b624878b7c1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from UnitTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFolder&gt;3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81/d:UnitTests&lt;/ProjectFolder&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Put_Update_ValidRequest_ReturnsAcceptedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Post_Create_ValidRequest_ReturnsCreatedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Post_Create_DoctorAlreadyExists_ReturnsBadRequestStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Put_Update_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Delete_Delete_DoctorExists_ReturnsDeletedDoctor&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Delete_Delete_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Get_GetByName_ValidRequest_ReturnsOKStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Get_GetByName_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Get_GetById_ValidRequest_ReturnsOKStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::3DDDF9D8-6DA6-4377-A820-1CEBA82B5B81::net6.0::tests.IntegrationTests.PlayerIntegrationTests.Get_GetById_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -10,6 +10,7 @@ namespace PlayerCrudApi.Mappings
         {
             CreateMap<CreatePlayerRequest, Player>();
             CreateMap<UpdatePlayerRequest, Player>();
+            CreateMap<PlayerDto, Player>().ReverseMap();
         }
     }
 }

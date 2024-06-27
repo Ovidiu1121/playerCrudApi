@@ -11,28 +11,33 @@ namespace PlayerCrudApi.Players.Controller.interfaces
         [HttpGet("all")]
         [ProducesResponseType(statusCode: 200, type: typeof(IEnumerable<Player>))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<IEnumerable<Player>>> GetAll();
+        public abstract Task<ActionResult<ListPlayerDto>> GetAll();
 
         [HttpPost("create")]
         [ProducesResponseType(statusCode: 201, type: typeof(Player))]
         [ProducesResponseType(statusCode: 400, type: typeof(String))]
-        public abstract Task<ActionResult<Player>> CreatePlayer([FromBody] CreatePlayerRequest request);
+        public abstract Task<ActionResult<PlayerDto>> CreatePlayer([FromBody] CreatePlayerRequest request);
 
         [HttpPut("update/{id}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Player))]
         [ProducesResponseType(statusCode: 400, type: typeof(String))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Player>> UpdatePlayer([FromRoute] int id, [FromBody] UpdatePlayerRequest request);
+        public abstract Task<ActionResult<PlayerDto>> UpdatePlayer([FromRoute] int id, [FromBody] UpdatePlayerRequest request);
 
         [HttpDelete("delete/{id}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Player))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Player>> DeletePlayer([FromRoute] int id);
+        public abstract Task<ActionResult<PlayerDto>> DeletePlayer([FromRoute] int id);
 
-        [HttpGet("{name}")]
+        [HttpGet("name/{name}")]
         [ProducesResponseType(statusCode: 202, type: typeof(Player))]
         [ProducesResponseType(statusCode: 404, type: typeof(String))]
-        public abstract Task<ActionResult<Player>> GetByNameRoute([FromRoute] string name);
+        public abstract Task<ActionResult<PlayerDto>> GetByNameRoute([FromRoute] string name);
+        
+        [HttpGet("id/{id}")]
+        [ProducesResponseType(statusCode: 202, type: typeof(Player))]
+        [ProducesResponseType(statusCode: 404, type: typeof(String))]
+        public abstract Task<ActionResult<PlayerDto>> GetByIdRoute([FromRoute] int id);
 
     }
 }

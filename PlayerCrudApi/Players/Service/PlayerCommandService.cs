@@ -16,9 +16,9 @@ namespace PlayerCrudApi.Players.Service
             _repository = repository;
         }
 
-        public async Task<Player> CreatePlayer(CreatePlayerRequest request)
+        public async Task<PlayerDto> CreatePlayer(CreatePlayerRequest request)
         {
-            Player player = await _repository.GetByNameAsync(request.Name);
+            PlayerDto player = await _repository.GetByNameAsync(request.Name);
 
             if (player!=null)
             {
@@ -29,9 +29,9 @@ namespace PlayerCrudApi.Players.Service
             return player;
         }
 
-        public async Task<Player> DeletePlayer(int id)
+        public async Task<PlayerDto> DeletePlayer(int id)
         {
-            Player player = await _repository.GetByIdAsync(id);
+            PlayerDto player = await _repository.GetByIdAsync(id);
 
             if (player==null)
             {
@@ -42,10 +42,10 @@ namespace PlayerCrudApi.Players.Service
             return player;
         }
 
-        public async Task<Player> UpdatePlayer(int id, UpdatePlayerRequest request)
+        public async Task<PlayerDto> UpdatePlayer(int id, UpdatePlayerRequest request)
         {
 
-            Player player = await _repository.GetByIdAsync(id);
+            PlayerDto player = await _repository.GetByIdAsync(id);
 
             if (player==null)
             {

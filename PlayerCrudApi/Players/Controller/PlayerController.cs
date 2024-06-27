@@ -18,17 +18,13 @@ namespace PlayerCrudApi.Players.Controller
             _playerQueryService = playerQueryService;
         }
 
-        public override async Task<ActionResult<Player>> CreatePlayer([FromBody] CreatePlayerRequest request)
+        public override async Task<ActionResult<PlayerDto>> CreatePlayer([FromBody] CreatePlayerRequest request)
         {
             try
             {
                 var players = await _playerCommandService.CreatePlayer(request);
 
-                return Ok(players);
-            }
-            catch (InvalidValue ex)
-            {
-                return BadRequest(ex.Message);
+                return Created("Player-ul a fost creat", players);
             }
             catch (ItemAlreadyExists ex)
             {
@@ -36,7 +32,7 @@ namespace PlayerCrudApi.Players.Controller
             }
         }
 
-        public override async Task<ActionResult<Player>> DeletePlayer([FromRoute] int id)
+        public override async Task<ActionResult<PlayerDto>> DeletePlayer([FromRoute] int id)
         {
             try
             {
@@ -50,7 +46,7 @@ namespace PlayerCrudApi.Players.Controller
             }
         }
 
-        public override async Task<ActionResult<IEnumerable<Player>>> GetAll()
+        public override async Task<ActionResult<ListPlayerDto>> GetAll()
         {
             try
             {
@@ -63,7 +59,7 @@ namespace PlayerCrudApi.Players.Controller
             }
         }
 
-        public override async Task<ActionResult<Player>> GetByNameRoute([FromRoute] string name)
+        public override async Task<ActionResult<PlayerDto>> GetByNameRoute([FromRoute] string name)
         {
             try
             {
@@ -76,7 +72,20 @@ namespace PlayerCrudApi.Players.Controller
             }
         }
 
-        public override async Task<ActionResult<Player>> UpdatePlayer([FromRoute] int id, [FromBody] UpdatePlayerRequest request)
+        public override async Task<ActionResult<PlayerDto>> GetByIdRoute(int id)
+        {
+            try
+            {
+                var players = await _playerQueryService.GetById(id);
+                return Ok(players);
+            }
+            catch (ItemDoesNotExist ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        public override async Task<ActionResult<PlayerDto>> UpdatePlayer([FromRoute] int id, [FromBody] UpdatePlayerRequest request)
         {
             try
             {

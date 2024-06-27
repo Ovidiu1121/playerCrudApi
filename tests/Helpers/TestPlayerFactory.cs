@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PlayerCrudApi.Dto;
 
 namespace tests.Helpers
 {
     public class TestPlayerFactory
     {
-        public static Player CreatePlayer(int id)
+        public static PlayerDto CreatePlayer(int id)
         {
-            return new Player
+            return new PlayerDto
             {
                 Id = id,
                 Name ="Spiderman"+id,
@@ -21,14 +22,14 @@ namespace tests.Helpers
 
         }
 
-        public static List<Player> CreatePlayers(int count)
+        public static ListPlayerDto CreatePlayers(int count)
         {
 
-            List<Player> players = new List<Player>();
+            ListPlayerDto players = new ListPlayerDto();
 
             for (int i = 0; i<count; i++)
             {
-                players.Add(CreatePlayer(i));
+                players.playerList.Add(CreatePlayer(i));
             }
 
             return players;

@@ -5,8 +5,8 @@ namespace PlayerCrudApi.Players.Service.interfaces
 {
     public interface IPlayerCommandService
     {
-        Task<Player> CreatePlayer(CreatePlayerRequest request);
-        Task<Player> UpdatePlayer(int id, UpdatePlayerRequest request);
-        Task<Player> DeletePlayer(int id);
+        Task<PlayerDto> CreatePlayer(CreatePlayerRequest request);
+        Task<PlayerDto> UpdatePlayer(int id, UpdatePlayerRequest request);
+        Task<PlayerDto> DeletePlayer(int id);
     }
 }

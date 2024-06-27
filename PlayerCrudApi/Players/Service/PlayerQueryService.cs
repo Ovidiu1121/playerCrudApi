@@ -1,4 +1,5 @@
-﻿using PlayerCrudApi.Players.Model;
+﻿using PlayerCrudApi.Dto;
+using PlayerCrudApi.Players.Model;
 using PlayerCrudApi.Players.Repository.interfaces;
 using PlayerCrudApi.Players.Service.interfaces;
 using PlayerCrudApi.System.Constant;
@@ -15,11 +16,11 @@ namespace PlayerCrudApi.Players.Service
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Player>> GetAllPlayers()
+        public async Task<ListPlayerDto> GetAllPlayers()
         {
-            IEnumerable<Player> players = await _repository.GetAllAsync();
+            ListPlayerDto players = await _repository.GetAllAsync();
 
-            if (players.Count().Equals(0))
+            if (players.playerList.Count().Equals(0))
             {
                 throw new ItemDoesNotExist(Constants.NO_PLAYERS_EXIST);
             }
@@ -27,9 +28,9 @@ namespace PlayerCrudApi.Players.Service
             return players;
         }
 
-        public async Task<Player> GetById(int id)
+        public async Task<PlayerDto> GetById(int id)
         {
-            Player players = await _repository.GetByIdAsync(id);
+            PlayerDto players = await _repository.GetByIdAsync(id);
 
             if (players == null)
             {
@@ -39,10 +40,10 @@ namespace PlayerCrudApi.Players.Service
             return players;
         }
 
-        public async Task<Player> GetByName(string name)
+        public async Task<PlayerDto> GetByName(string name)
         {
 
-            Player players = await _repository.GetByNameAsync(name);
+            PlayerDto players = await _repository.GetByNameAsync(name);
 
             if (players == null)
             {

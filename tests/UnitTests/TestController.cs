@@ -57,9 +57,9 @@ namespace tests.UnitTests
 
             var result = await _controller.GetAll();
             var okresult = Assert.IsType<OkObjectResult>(result.Result);
-            var playersAll = Assert.IsType<List<Player>>(okresult.Value);
+            var playersAll = Assert.IsType<ListPlayerDto>(okresult.Value);
 
-            Assert.Equal(5, playersAll.Count);
+            Assert.Equal(5, playersAll.playerList.Count);
             Assert.Equal(200, okresult.StatusCode);
 
         }
@@ -103,9 +103,9 @@ namespace tests.UnitTests
             _command.Setup(repo => repo.CreatePlayer(create)).ReturnsAsync(player);
 
             var result = await _controller.CreatePlayer(create);
-            var okResult = Assert.IsType<OkObjectResult>(result.Result);
+            var okResult = Assert.IsType<CreatedResult>(result.Result);
 
-            Assert.Equal(okResult.StatusCode, 200);
+            Assert.Equal(okResult.StatusCode, 201);
             Assert.Equal(player, okResult.Value);
 
         }
